@@ -1,0 +1,60 @@
+*{
+	margin: 0px;
+	padding: 0px;
+}
+body{
+	background: rgb(238,240,239);
+}
+.topimg{
+	width: 100%;
+	height: 80px;
+	margin-top: 0px;
+	margin-left: 0px;
+	font-size: 35px;
+	line-height: 90px;
+	background: url(../img/sky.jpg) no-repeat;
+}
+.topfont{
+	left: 40px;
+	position: absolute;
+	top: 0px;
+}
+.leftfont{
+	list-style-type: none;
+	text-decoration: none;
+}
+.leftimg{
+	width: 200px;
+	height: 562px;
+	margin-top: 0px;
+	margin-left: 0px;
+	/*background: rgb(52,51,69);*/
+	background: url(../img/bg.jpg);
+	background-size: cover;
+}
+.col{
+	width: 200px;
+	height: 75px;
+	background: rgb();
+	font-size: 20px;
+	line-height: 70px;
+	text-align: center;
+	display:block;
+}
+.a{
+	list-style-type: none;
+	text-decoration: none;
+}
+.leftimg div:hover{
+	/*background: rgb(43,42,58);*/
+	background: url(../img/bg1.jpg);
+}
+.midimg{
+	width: 1150px;
+	height: 580px;
+	margin-top: -562px;
+	margin-left: 200px;
+	background: rgb(238,240,239);
+	/*background: url(../img/skybird.jpg);*/
+	background-size: cover;
+}

@@ -1,0 +1,88 @@
+*{
+	margin : 0px;
+	padding : 0px;
+}
+body{
+	background: url(../img/mid.png) no-repeat;
+	background-size: cover;
+}
+#register{
+	width: 420px;
+	height: 480px;
+	position: absolute;
+	margin-top: 0px;
+	left: 50%;
+	margin-left: -210px;
+	background: url(../img/bg2.jpg);
+	display: none;
+}
+.title{
+	margin-top :50px;
+	font-size: 50px;
+}
+#show{
+	width: 100%;
+	height: 100%;
+	/*三原色：最后参数是透明度：0表示全透明，1表示不透明*/
+	background: rgba(0,0,0,0.7);
+	/*绝对布局：重新定义坐标，根据坐标定义开始参考点的位置*/
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	display: none;
+}
+#midimg{
+	width: 554px;
+	height: 342px;
+	position: absolute;
+	box-shadow: 0px 0px 20px black;
+	/*border-radius: 10px; */
+	left: 50%;
+	top: 50%;
+	margin-left: -280px;
+	margin-top: -150px;
+	background: url(../img/bg3.jpg) no-repeat;
+	background-size: cover;
+	border-radius: 30px;
+}
+.user{
+	margin-top :50%;
+	left: 50%;
+	margin-top: 120px;
+	margin-left: -50px;
+	font-size: 25px;
+}
+.pass{
+	margin-top :50%;
+	left: 50%;
+	margin-top: 10px;
+	margin-left: -32px;
+	font-size: 25px;
+}
+.register{
+	margin-top :50%;
+	left: 50%;
+	margin-top: 20px;
+	margin-left: 10px;
+	font-size: 65px;
+}
+.submit{
+	margin-top :50%;
+	left: 50%;
+	margin-top: 30px;
+	margin-left: -65px;
+}
+.button{
+	margin-top :50%;
+	left: 50%;
+	margin-top: -35px;
+	margin-left: 132px;
+}
+.close{
+	width: 15px;
+	height: 15px;
+	position: absolute;
+	margin-left: 375px;
+	margin-top: -12px;
+	cursor:pointer;
+}
