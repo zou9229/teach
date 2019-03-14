@@ -16,20 +16,21 @@
 				<table rules="rows" border="0px" cellpadding="0" class="letftable">
 					<col/>
 					<form name="input" id="classman" action="/page10/" method="post" >
-						<tr height="35px"><td><center>课程编号：<input class="srk" type="text" name="num"/></center></td></tr>
-						<tr height="35px"><td><center>课程名称：<input class="srk" type="text" name="name"/></center></td></tr>
-						<tr height="35px"><td><center>任课老师：<input class="srk" type="text" name="teacher"/></center></td></tr>
-						<tr height="35px"><td><center>课程学分：<input class="srk" type="text" name="grade"/></center></td></tr>
+                        {% csrf_token %}
+						<tr height="35px"><td><center>课程编号：<input class="srk" type="text" name="classnumber"/></center></td></tr>
+						<tr height="35px"><td><center>课程名称：<input class="srk" type="text" name="classname"/></center></td></tr>
+						<tr height="35px"><td><center>任课老师：<input class="srk" type="text" name="classteacher"/></center></td></tr>
+						<tr height="35px"><td><center>课程学分：<input class="srk" type="text" name="classgrade"/></center></td></tr>
 						<tr height="35px">
 							<td><center>开课院系：
-								<select class="srk" name="select">
+								<select class="srk" name="classAcademy">
 									<option value=""></option>
-									<option value="">计算机科学与工程学院</option>
+									<option value="计算机科学与工程学院">计算机科学与工程学院</option>
 									<option value="">化工与制药学院</option>
 								</select></center>
 							</td>
 						</tr>
-                        <tr height="130px"><td><center>课程简介：<input class="srk srke" type="text" name="summary" /></center></td></tr>
+                        <tr height="130px"><td><center>课程简介：<input class="srk srke" type="text" name="classintroduce" /></center></td></tr>
 						<input class="ok" style="color: white;" type="submit" value="确定">
 						<button class="cancel" style="color: white;" type="reset" value="Reset">取消</button>
 					</form>
@@ -52,19 +53,31 @@
 				        </tr>
 				    </thead>
 				    <tbody style="display:block; width:736px; height:380px; overflow:auto;">
-			    		{% for td in tr %}
-			    		<tr style="border-bottom:1px solid black;">
-			    			{% for t in td %}
-		    				<td class="lie"><center>{{ t }}</center></td>
-		    				{% empty %}
+{#			    		{% for td in tr %}#}
+{#			    		<tr style="border-bottom:1px solid black;">#}
+{#			    			{% for t in td %}#}
+{#		    				<td class="lie"><center>{{ t }}</center></td>#}
+{#		    				{% empty %}#}
+{#							<td><font size="7">没有数据</font></td>#}
+{#    						{% endfor %}#}
+{#			    		</tr>#}
+{#			    		{% endfor %}#}
+                        {% for r in tr %}
+                        <tr style="border-bottom:1px solid black;">
+                            <td class="lie"><center>{{ r.classnumber }}</center></td>
+                            <td class="lie"><center>{{ r.classname }}</center></td>
+                            <td class="lie"><center>{{ r.classteacher }}</center></td>
+                            <td class="lie"><center>{{ r.classgrade }}</center></td>
+                            <td class="lie"><center>{{ r.classAcademy }}</center></td>
+                            <td class="lie"><center>{{ r.classintroduce }}</center></td>
+                            {% empty %}#}
 							<td><font size="7">没有数据</font></td>
-    						{% endfor %}
-			    		</tr>
-			    		{% endfor %}   
+                        </tr>
+                        {% endfor %}
 				    </tbody>
 				</table>
 			</div>
-			<a href="javascript:location.reload();"  style="text-decoration: none;">
+			<a href="/page10/"  style="text-decoration: none;">
 				<div class="midrightfont" style="color: white;">刷新</div>
 			</a>
 			<div class="midleftfont" style="color:white">
