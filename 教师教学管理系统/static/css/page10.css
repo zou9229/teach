@@ -4,6 +4,10 @@
 	/*设置内边距：给一个值，设置上下左右*/
 	padding : 0px;
 }
+.lie{
+	width: 126px;
+	height: 30px;
+}
 .top{
 	width: 100%;
 	height: 50px;
@@ -88,8 +92,8 @@
 }
 .srk{
 	width: 200px;
-	height: 20px;
-	border-radius: 10px;
+	height: 30px;
+	border-radius: 5px;
 }
 .srke{
 	height: 90px;
@@ -118,4 +122,12 @@
 	top: 350px;
 	left: 186px;
 	background: rgb(128,128,128);
+}
+.midleftmid{
+	position: absolute;
+	margin-top: -475px;
+	margin-left: 150px;
+	width: 390px;
+	height: 45px;
+	background: white;
 }

@@ -1,0 +1,53 @@
+{% extends "manage.html" %}
+
+{% block top %}
+    <center>成绩管理</center>
+{% endblock %}
+
+{% block midleft %}
+    <form name="input" id="classman" action="/grade/" method="post" >
+        {% csrf_token %}
+        <tr height="35px"><td><center>学生学号：<input class="srk" type="text" name="stunumber"/></center></td></tr>
+        <tr height="35px"><td><center>学生姓名：<input class="srk" type="text" name="stuname"/></center></td></tr>
+        <tr height="35px"><td><center>课程编号：<input class="srk" type="text" name="classnumber"/></center></td></tr>
+        <tr height="35px"><td><center>平时成绩：<input class="srk" type="text" name="normalgrade"/></center></td></tr>
+        <tr height="35px"><td><center>考试成绩：<input class="srk" type="text" name="testgrade"/></center></td></tr>
+        <input class="ok" style="color: white;" type="submit" value="确定">
+        <button class="cancel" style="color: white;" type="reset" value="Reset">取消</button>
+    </form>
+{% endblock %}
+
+{% block midrightop %}
+    <th class="lie"><center>学生学号</center></th>
+    <th class="lie"><center>学生姓名</center></th>
+    <th class="lie"><center>课程编号</center></th>
+    <th class="lie"><center>平时成绩</center></th>
+    <th class="lie"><center>考试成绩</center></th>
+    <th class="lie"><center>操作</center></th>
+{% endblock %}
+
+{% block midrightdown %}
+    {% for r in tr %}
+    <tr style="border-bottom:1px solid black;">
+        <td class="lie"><center>{{ r.stunumber }}</center></td>
+        <td class="lie"><center>{{ r.stuname }}</center></td>
+        <td class="lie"><center>{{ r.classnumber.classnumber }}</center></td>
+        <td class="lie"><center>{{ r.normalgrade }}</center></td>
+        <td class="lie"><center>{{ r.testgrade }}</center></td>
+        {% empty %}
+        <td><font size="7">没有数据</font></td>
+    </tr>
+    {% endfor %}
+{% endblock %}
+
+{% block refresh %}
+    <a href="/grade/"  style="text-decoration: none;">
+        <div class="midrightfont" style="color: white;">刷新</div>
+    </a>
+{% endblock %}
+
+{% block title %}
+    <div class="midleftfont" style="color:white">
+        添加成绩
+    </div>
+{% endblock %}

@@ -21,9 +21,10 @@ from 教学管理 import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('index/',views.index),
-    path('page1/',views.page1),
+    path('',views.index),
+    path('page1/',views.login),
+    path('index/',views.register),
     path('page10/',views.page10),
-    path('classmanage/',views.classmanage),
+    path('grade/',views.grade),
 ]
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

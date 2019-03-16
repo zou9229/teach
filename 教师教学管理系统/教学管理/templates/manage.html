@@ -3,42 +3,50 @@
 	<head>
 		<meta charset="UTF-8">
 		<title></title>
-		<link rel="stylesheet" href="/static/css/manage.css" />
+		<link rel="stylesheet" href="/static/css/page10.css" />
+        <link rel="stylesheet" href="/static/css/bootstrap.min.css">
 	</head>
 	<body>
-		<table rules="rows" border="0px" cellpadding="0" class="table">
-			<thead>
-				<tr>
-			        <th class="lie"><center>课程编号</center></th>
-			        <th class="lie"><center>课程名称</center></th>
-			        <th class="lie"><center>任课老师</center></th>
-			        <th class="lie"><center>课程学分</center></th>
-			        <th class="lie"><center>开课院系</center></th>
-			        <th class="lie"><center>课程简介</center></th>
-			        <th class="lie"><center>操作</center></th>
-		        </tr>
-		    </thead>
-		    <tbody>
-		    	<tr>
-			        <td class="lie"><center>row 1, cell 1</center></td>
-			        <td class="lie"><center>row 1, cell 1</center></td>
-			        <td class="lie"><center>row 1, cell 1</center></td>
-			        <td class="lie"><center>row 1, cell 1</center></td>
-			        <td class="lie"><center>row 1, cell 1</center></td>
-			        <td class="lie"><center>row 1, cell 1</center></td>
-			        <td class="lie"><center>row 1, cell 1</center></td>
-			        
-			    </tr>
-			    <tr>
-			        <td class="lie"><center>row 2, cell 1</center></td>
-			        <td class="lie"><center>row 2, cell 1</center></td>
-			        <td class="lie"><center>row 2, cell 1</center></td>
-			        <td class="lie"><center>row 2, cell 1</center></td>
-			        <td class="lie"><center>row 2, cell 1</center></td>
-			        <td class="lie"><center>row 2, cell 1</center></td>
-			        <td class="lie"><center>row 2, cell 1</center></td>
-			    </tr>
-		    </tbody>
-		</table>
+		<div class="top">
+			<div class="leftop">{% block top %}{% endblock %}</div>
+		</div>
+		<div class="mid">
+			<div class="midmid"></div>
+			<div class="midmidleft">
+				<table rules="rows" border="0px" cellpadding="0" class="letftable">
+					<col/>
+                    {% block midleft %}{% endblock %}
+				</table>
+			</div>
+			<div  class="midmidright">
+				<!--<iframe src="classmanage.html" name="mid" class="miding" scrolling="no" frameborder="0" style="width:100%;height:100%;">
+
+				</iframe>	-->
+				<table rules="none" border="0px" cellpadding="0" id="table">
+					<thead style="display:block; width:736px;">
+						<tr style="border-bottom:1px solid black;">
+                            {% block midrightop %}{% endblock %}
+				        </tr>
+				    </thead>
+				    <tbody style="display:block; width:736px; height:380px; overflow:auto;">
+                        {% block midrightdown %}{% endblock %}
+				    </tbody>
+				</table>
+			</div>
+            {% block refresh %}{% endblock %}
+            {% block title %}{% endblock %}
+			<div class="midleftmid">
+                {% if error %}
+                <div id = "error" class="alert alert-danger alert-dismissible" role="alert">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close" onclick="close1();">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    {{ error }}
+                </div>
+                {% endif %}
+			</div>
+		</div>
 	</body>
+	<script type="text/javascript" src="/static/js/jquery-2.1.0.js"></script>
+    <script type="text/javascript" src="/static/js/s.js"></script>
 </html>
