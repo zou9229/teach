@@ -1,18 +1,14 @@
 {% extends "manage.html" %}
 
 {% block top %}
-    <center>成绩管理</center>
+    <center>学生信息查询</center>
 {% endblock %}
 
 {% block midleft %}
-    <form name="input" id="classman" action="/grade/" method="post" >
+    <form name="input" id="classman" action="/stuinforselect/" method="post" >
         {% csrf_token %}
         <tr height="35px"><td><center>学生学号：<input class="srk" type="text" name="stunumber"/></center></td></tr>
         <tr height="35px"><td><center>学生姓名：<input class="srk" type="text" name="stuname"/></center></td></tr>
-        <tr height="35px"><td><center>课程编号：<input class="srk" type="text" name="classnumber"/></center></td></tr>
-        <tr height="35px"><td><center>课程名称：<input class="srk" type="text" name="classname"/></center></td></tr>
-        <tr height="35px"><td><center>平时成绩：<input class="srk" type="text" name="normalgrade"/></center></td></tr>
-        <tr height="35px"><td><center>考试成绩：<input class="srk" type="text" name="testgrade"/></center></td></tr>
         <input class="ok" style="color: white;" type="submit" value="确定">
         <button class="cancel" style="color: white;" type="reset" value="Reset">取消</button>
     </form>
@@ -21,10 +17,10 @@
 {% block midrightop %}
     <th class="lie"><center>学生学号</center></th>
     <th class="lie"><center>学生姓名</center></th>
-    <th class="lie"><center>课程编号</center></th>
-    <th class="lie"><center>课程名称</center></th>
-    <th class="lie"><center>平时成绩</center></th>
-    <th class="lie"><center>考试成绩</center></th>
+    <th class="lie"><center>学生性别</center></th>
+    <th class="lie"><center>学生年龄</center></th>
+    <th class="lie"><center>学生院系</center></th>
+    <th class="lie"><center>身份证号</center></th>
     <th class="lie"><center>操作</center></th>
 {% endblock %}
 
@@ -33,11 +29,11 @@
     <tr style="border-bottom:1px solid black;">
         <td class="lie"><center>{{ r.stunumber }}</center></td>
         <td class="lie"><center>{{ r.stuname }}</center></td>
-        <td class="lie"><center>{{ r.classnumber }}</center></td>
-        <td class="lie"><center>{{ r.classname }}</center></td>
-        <td class="lie"><center>{{ r.normalgrade }}</center></td>
-        <td class="lie"><center>{{ r.testgrade }}</center></td>
-        <td class="lie"><center><a href="/gradedelete/?id={{ r.id }}">删除</a></center></td>
+        <td class="lie"><center>{{ r.stusex }}</center></td>
+        <td class="lie"><center>{{ r.stuage }}</center></td>
+        <td class="lie"><center>{{ r.stuAcademy }}</center></td>
+        <td class="lie"><center>{{ r.stuIDcard }}</center></td>
+        <td class="lie"><center><a href="/stuinfordelete/?id={{ r.stunumber }}">删除</a></center></td>
         {% empty %}
         <td><font size="7">没有数据</font></td>
     </tr>
@@ -45,13 +41,13 @@
 {% endblock %}
 
 {% block refresh %}
-    <a href="/grade/"  style="text-decoration: none;">
+    <a href="/stuinforselect/"  style="text-decoration: none;">
         <div class="midrightfont" style="color: white;">刷新</div>
     </a>
 {% endblock %}
 
 {% block title %}
     <div class="midleftfont" style="color:white">
-        添加成绩
+        学生信息
     </div>
 {% endblock %}

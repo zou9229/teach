@@ -15,6 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from django.conf.urls import url
 from django.conf.urls.static import static
 from django.conf import settings
 from 教学管理 import views
@@ -22,9 +23,21 @@ from 教学管理 import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',views.index),
-    path('page1/',views.login),
+    url('page1/',views.login),
     path('index/',views.register),
-    path('page10/',views.page10),
+    path('page10/',views.classmanages),
     path('grade/',views.grade),
+    path('studentinformation/',views.studentinformations),
+    path('stuclassquery/',views.selectgrade),
+    path('stuinforselect/',views.stuinforselect),
+    path('userteach/',views.userteach1),
+    path('userinfo/',views.userinfo),
+    path('userlogout/',views.userlogout),
+    url('gradedelete/$',views.gradedelete),
+    url('classdelete/$',views.classdelete),
+    url('studentinformationdelete/$',views.studentinformationdelete),
+    url('stuclassquerydelete/$',views.stuclassquerydelete),
+    url('stuinfordelete/$',views.stuinfordelete),
+    url('userteachdelete/$',views.userteachdelete),
 ]
-urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+urlpatterns += static(settings.STATIC_URL, document_root=settings.STATICFILES_DIRS)

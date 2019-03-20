@@ -26,7 +26,6 @@ body{
 	top: 10px;
 	left: 1100px;
 	font-size: 25px;
-	background: white;
 }
 .leftfont{
 	list-style-type: none;
@@ -44,7 +43,7 @@ body{
 .col{
 	width: 200px;
 	height: 75px;
-	background: rgb();
+	/*background: rgb();*/
 	font-size: 20px;
 	line-height: 70px;
 	text-align: center;

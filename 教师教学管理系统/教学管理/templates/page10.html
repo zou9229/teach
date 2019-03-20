@@ -24,9 +24,8 @@
 						<tr height="35px">
 							<td><center>开课院系：
 								<select class="srk" name="classAcademy">
-									<option value=""></option>
 									<option value="计算机科学与工程学院">计算机科学与工程学院</option>
-									<option value="">化工与制药学院</option>
+									<option value="化工与制药学院">化工与制药学院</option>
 								</select></center>
 							</td>
 						</tr>
@@ -70,6 +69,7 @@
                             <td class="lie"><center>{{ r.classgrade }}</center></td>
                             <td class="lie"><center>{{ r.classAcademy }}</center></td>
                             <td class="lie"><center>{{ r.classintroduce }}</center></td>
+                            <td class="lie"><center><a href="/classdelete/?id={{ r.classnumber }}">删除</a></center></td>
                             {% empty %}
 							<td><font size="7">没有数据</font></td>
                         </tr>
